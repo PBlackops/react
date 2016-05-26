@@ -65,10 +65,10 @@
                  <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
                 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
                     <script type="text/template">
-                        ### DOM updates can be very efficient 
+                        ### DOM updates can be very inefficient
                         Let's take a closer look at how this works...
 
-                        Whenever you use functions like getElementById or using a jQuery object like: $(‘#Example’), you're reading from the DOM. When you change any of those elements, change classes, change content, you're writing to the DOM. So you read and you write to the DOM. 
+                        Whenever you use functions like getElementById or using a jQuery object like: $(‘#Example’), you're reading from the DOM. When you change any of those elements, change classes, change content, you're writing to the DOM. So you reading and you writing to the DOM will tax site performance. 
 
                         --
 
@@ -77,7 +77,7 @@
                         --
 
                         ### Slowness can be a by-product
-                        When looking at closer other at other frameworks we will typically see slow DOM rendering (EX:  Backbone or knockout). Typically they re-render the same data over and over again. Even when changes haven't happened everywhere, we continue to re-render. By the way re-rendering slows down our apps a lot (Did I mention that).
+                        When looking at closer other at other frameworks we will typically see slow DOM rendering (EX:  Backbone or knockout). Typically they re-render the same data over and over again. Even when changes haven't happened everywhere, we continue to re-render, then re-render, and re-render... 
 
                         --
 
@@ -86,7 +86,7 @@
                         --
 
                         ### Need for speed
-                        So why is **React** *so fast?* It only interacts with the virtual DOM, that JavaScript object. When we use getDOMNode, we'll get state information from the virtual DOM. When we call the render function, React will update the virtual DOM which will push only those necessary changes to the real DOM.
+                        So why is **React** *so fast?* React only interacts it's 'virtual' DOM, (that is a JavaScript object). When we use getDOMNode, we'll get state information from the virtual DOM. When we call the render function, React will update the virtual DOM which will push only those necessary changes to the real DOM.
 
                         --
 
