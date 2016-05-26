@@ -62,6 +62,114 @@
                     </script>
                 </section>
 
+                 <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
+                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+                    <script type="text/template">
+                        ### DOM updates can be very efficient 
+                        Let's take a closer look at how this works...
+
+                        Whenever you use functions like getElementById or using a jQuery object like: $(‘#Example’), you're reading from the DOM. When you change any of those elements, change classes, change content, you're writing to the DOM. So you read and you write to the DOM. 
+
+                        --
+
+                        ![Example](images/dom1.png)
+
+                        --
+
+                        ### Slowness can be a by-product
+                        When looking at closer other at other frameworks we will typically see slow DOM rendering (EX:  Backbone or knockout). Typically they re-render the same data over and over again. Even when changes haven't happened everywhere, we continue to re-render. By the way re-rendering slows down our apps a lot (Did I mention that).
+
+                        --
+
+                        ![Example](images/dom2.png)
+
+                        --
+
+                        ### Need for speed
+                        So why is **React** *so fast?* It only interacts with the virtual DOM, that JavaScript object. When we use getDOMNode, we'll get state information from the virtual DOM. When we call the render function, React will update the virtual DOM which will push only those necessary changes to the real DOM.
+
+                        --
+
+                        ![Example](images/dom3.png)
+
+                        --
+
+                        ![Example](images/dom4.png)
+
+                        --
+
+                        ![Example](images/dom5.png)
+
+                        --
+
+                        ### Razor VS React:
+                        Razor and React both appear to be identical (not really but, Greg is making a point), both will convert the after mentioned code into a literal translation for the browser to interpret.  
+
+                        --
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>JSX</th>
+                                    <th>RAZOR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Front-End (Mostly)</td>
+                                    <td>Back-End (Mostly)</td>
+                                </tr>
+                                <tr>
+                                    <td>Imperative code (JavaScript) with declarative XML/HTML mixed in.</td>
+                                    <td>Declarative code (HTML) with imperative C# or VB mixed in.</td>
+                                </tr>
+                                <tr>
+                                    <td>UI composition, logic and ViewModel contained in same file.</td>
+                                    <td>UI composition and logic contained in same file. ViewModel defined in separate class file.</td>
+                                </tr>
+                                <tr>
+                                    <td>Compiles to native format: JavaScript</td>
+                                    <td>Compiles to native format: C# or VB</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        --
+
+                        The primary problem with Razor, unless the View State is precompiled performance can become an issue as the View State is rendered.  This disconnect stems from Razor converting into C#, then into IL, then into the browser.  The content isn’t truly dynamic, as it needs to be re-rendered into the View State.
+
+                    </script>
+                </section>
+
+                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+                    <script type="text/template">
+                        ## React's Limitations:
+
+                        --
+
+                        #### It's not like Ember or Angular.
+                        React isn’t a full framework, there isn’t a router, controller, model management, or other prebuilt functionality like a pther MVC approaches.  This limitation is alleviated with Flux, designed to create a clear connection between all aspects within the framework.  
+
+                        --
+
+                        The primary difference being Views don’t modify data directly.  All modifications of the data are done by triggering Action Events.  Since it’s an application architecture, there’s really not a pro or con.  Use of it will depend highly on your needs.  
+
+                        --
+
+                        ![Example](images/example1.png)
+
+                        --
+
+                        ![Example](images/example2.png)
+                        *One reason why I would use the Flux pattern would be to avoid handling imperative UI state changes, whenever my data has changed.*
+
+                        --
+
+                        ### Example: 
+                        If I were to delete a to-do, in a to-do list application.  It’s going to be a hassle if I need to imperatively update the UI state in other places such as the List of to-do’s, total to-do’s count.
+                    </script>
+                </section>
+
                 <!-- Element attributes -->
                 <section data-markdown>
                     <script type="text/template">
