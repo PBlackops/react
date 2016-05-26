@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>rBlackOps - React Talk</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+
+                <!-- Slides are separated by three dashes (quick 'n dirty regular expression) -->
+                <section data-markdown data-separator="---">
+                    <script type="text/template">
+                        ## Blackops Code Meetup
+                        ### [React.JS](https://facebook.github.io/react/ "React.js Homepage")
+                        ![React Logo](images/react.png "React Logo")
+                        ---
+                        ## Who Uses React?
+                        * Facebook
+                        * Instagram
+                        * [Many many more...](https://github.com/facebook/react/wiki/Sites-Using-React, "Sites that use React")
+                        ---
+                        ## Why are they using React?
+                        React is a Frontend Framework. It's an open source project that started at Facebook and it's maintained by developers at Facebook and Instagram and also a huge community of contributors. React is intended to be the view or the user interface, the V in MVC. One of the benefits and goals of the React project is to make developing a large scale single page application or SPA, much easier.
+                    </script>
+                </section>
+
+                <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
+                <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+                    <script type="text/template">
+                        ## Components.
+
+                        --
+
+                        ### Overview of a component.
+                        React doesn’t use a Shadow Dom, instead it provides the ability to create your own components that you can later reuse, combine, and integrate.  The ease in which this occurs will boost productivity in development.
+
+                        --
+
+                        ### Performance:
+                        Rather than utilizing the browsers DOM, React utilizes a virtual DOM stored in memory, then will inject said modifications to the rendered DOM.
+
+                        --
+
+                        ### Simpler, Cleaner JavaScript:
+                        React utilizes a special syntax called JSX, which will allow you to mix HTML and JavaScript.  It isn’t a requirement, but allows a cleaner approach to writing components. JSX utilizes the familiarity of XML Syntax.
+
+                    </script>
+                </section>
+
+                <!-- No "extra" slides, since there are no separators defined (so they'll become horizontal rulers) -->
+                <section data-markdown>
+                    <script type="text/template">
+                        A
+
+                        ---
+
+                        B
+
+                        ---
+
+                        C
+                    </script>
+                </section>
+
+                <!-- Slide attributes -->
+                <section data-markdown>
+                    <script type="text/template">
+                        <!-- .slide: data-background="#ccc" -->
+                        ## Slide attributes
+                    </script>
+                </section>
+
+                <!-- Element attributes -->
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Element attributes
+                        - Item 1 <!-- .element: class="fragment" data-fragment-index="1" -->
+                        - Item 2 <!-- .element: class="fragment" data-fragment-index="2" -->
+                        - Item 3 <!-- .element: class="fragment" data-fragment-index="3``" -->
+                    </script>
+                </section>
+
+                <!-- Code -->
+                <section data-markdown>
+                    <script type="text/template">
+                        ```javascript
+                        function foo()
+                        {
+                            let foo = array[]
+                        }
+                        ```
+                    </script>
+                </section>
+
+            </div>
+		</div>
+
+		<script src="js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'js/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'js/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'js/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/notes.js' }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
