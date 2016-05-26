@@ -178,18 +178,34 @@
                         [Link to View](example/index.html)
                         ```javascript
                             var FirstComponent = React.createClass({
-                                render: function(){
-                                    return {
-                                        <div>
-                                            <p> Hello, {this.props.name}</p>
-                                        </div>
-                                    }
+                              propTypes: {
+                                name: React.PropTypes.string.isRequired,
+                                location: React.PropTypes.string.isRequired
+                              },
+                              getDefaultProps: function() {
+                                return {
+                                  name: 'Mike',
+                                  location: 'Tigard'
                                 }
+                              },
+                              render: function() {
+                                let name = this.props.name;
+                                let location = this.props.location;
+                                return (
+                                  <div>
+                                    <p>Hello, {name}!</p>
+                                    <p>I live in {location}</p>
+                                  </div>
+                                )
+                              }
                             });
+                            // FirstComponent.propTypes = {
+                            //   name: React.PropTypes.number
+                            // }
                             ReactDOM.render(
-                                <FirstComponent name="Blackops" />,
-                                document.getElementById('app')
-                            )
+                              <FirstComponent name="Greg" location="Beaverton"/>,
+                              document.getElementById('app')
+                            );
                         ```                        
                     </script>
                 </section>
